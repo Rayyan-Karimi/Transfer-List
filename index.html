@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Transfer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h2>Transfer List</h2>
+    </header>
+    <table>
+        <tr>
+            <td class="column" id="col1">
+                <label><input type="checkbox" value="Vue">Vue</label><br>
+                <label><input type="checkbox" value="React">React</label><br>
+                <label><input type="checkbox" value="Svelte">Svelte</label><br>
+                <label><input type="checkbox" value="JS">JS</label><br>
+                <label><input type="checkbox" value="HTML">HTML</label><br>
+                <label><input type="checkbox" value="CSS">CSS</label><br>
+                <label><input type="checkbox" value="TS">TS</label><br>
+                <label><input type="checkbox" value="Angular">Angular</label><br>
+            </td>
+            <td>
+                <div class="buttons">
+                    <button id="moveAllToLeft"><<</button>
+                    <button id="moveToLeft"><</button>
+                    <button id="moveToRight">></button>
+                    <button id="moveAllToRight">>></button>
+                </div>
+            </td>
+            <td class="column" id="col3"></td>
+        </tr>
+    </table>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
