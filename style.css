@@ -21,29 +21,34 @@ body {
 table {
     border-collapse: collapse;
     border: 2px solid #796e6e;
-    width: 30vw;
-    text-align: center;
-    margin-top: 10vh;
+    margin: 7vh;
 }
 
-th,
+tr {
+    height: 35vh;
+}
+
 td {
-    border: 2px solid #796e6e;
-    padding: 1.5rem;
     text-align: left;
+    height: inherit;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     width: 25rem;
-    height: max-content;
+    height: 0;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    border-left: 2px solid #796e6e;
+    border-right: 2px solid #796e6e;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: inherit;
 }
 
 button {

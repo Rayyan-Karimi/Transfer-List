@@ -1,1 +1,1 @@
-Transfer list, mini project - pls check deployed version on Vercel - --link coming soon.--
+Transfer list, mini project - pls check deployed version on Vercel - --[Vercel](https://transfer-list-virid.vercel.app/)--
