@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 /* Header */
@@ -42,6 +43,17 @@ td {
     align-items: flex-start;
     gap: 0.5rem;
     min-width: 15rem;
+}
+
+@media (max-width: 560px) {
+    td {
+        min-width: 1rem;
+    }
+
+    /* Flex column for proper alignment */
+    .column {
+        min-width: 5rem;
+    }
 }
 
 /* Button styles */

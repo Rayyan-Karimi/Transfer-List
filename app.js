@@ -36,7 +36,6 @@ updateButtonState();
 addCheckboxListeners();
 
 
-// Button event listeners
 document.getElementById("moveAllToLeft").addEventListener("click", () => moveTo(col3, col1, true));
 document.getElementById("moveToLeft").addEventListener("click", () => moveTo(col3, col1));
 document.getElementById("moveToRight").addEventListener("click", () => moveTo(col1, col3));
