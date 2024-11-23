@@ -1,4 +1,4 @@
-/* styles.css */
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,8 +9,9 @@ body {
     align-items: center;
 }
 
+/* Header */
 .header {
-    width: 100vw;
+    width: 100%;
     padding: 1rem;
     text-align: center;
     box-sizing: border-box;
@@ -20,38 +21,43 @@ body {
 /* Table */
 table {
     border-collapse: collapse;
-    border: 2px solid #796e6e;
-    margin: 7vh;
+    margin: 7vh 0;
+    box-sizing: border-box;
 }
 
 tr {
-    height: 35vh;
+    border: 2px solid #000;
 }
 
 td {
+    border: 2px solid #000;
+    min-width: 2rem;
     text-align: left;
-    height: inherit;
 }
 
+/* Flex column for proper alignment */
 .column {
     display: flex;
     flex-direction: column;
-    width: 25rem;
-    height: 0;
+    align-items: flex-start;
+    gap: 0.5rem;
+    min-width: 15rem;
 }
 
-.buttons {
+/* Button styles */
+.buttons>button {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    border-left: 2px solid #796e6e;
-    border-right: 2px solid #796e6e;
-    box-sizing: border-box;
-    padding: 1rem;
-    height: inherit;
+    justify-content: center;
+    align-items: center;
+    margin: 0.75rem 0.75rem;
 }
 
-button {
-    cursor: pointer;
-    padding: 5px 10px;
+#col1,
+#col3 {
+    border: none;
+}
+
+label {
+    padding: 0.5rem 1.5rem;
 }
