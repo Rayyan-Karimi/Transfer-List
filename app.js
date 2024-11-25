@@ -1,18 +1,22 @@
 const col1 = document.getElementById("col1");
 const col3 = document.getElementById("col3");
 
+
+// Main movement function
 const moveTo = (source, target, all = false) => {
     const items = [...source.querySelectorAll("label")];
     items.forEach(label => {
         const checkbox = label.querySelector("input[type='checkbox']");
         if (all || checkbox.checked) {
-            checkbox.checked = false; // Uncheck before moving
-            target.appendChild(label); // Append to target column
+            checkbox.checked = false;
+            target.appendChild(label);
         }
     });
-    updateButtonState(); // Check and update button states after moving
+    updateButtonState();
 };
 
+
+// Update the button state
 const updateButtonState = () => {
     const hasItemsCol1 = col1.querySelectorAll("label").length > 0;
     const hasItemsCol3 = col3.querySelectorAll("label").length > 0;
@@ -25,18 +29,36 @@ const updateButtonState = () => {
     document.getElementById("moveToLeft").disabled = !hasCheckedCol3;
 };
 
-const addCheckboxListeners = () => {
-    const allCheckboxes = document.querySelectorAll("input[type='checkbox']");
-    allCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateButtonState);
-    });
-}
 
+// use movement buttons
+const movementButtons = document.querySelector(".buttons")
+movementButtons.addEventListener("click", (event) => {
+    if (event.target.classList.contains("movement-button")) {
+        const action = event.target.dataset.button;
+        switch (action) {
+            case "moveAllToLeft":
+                moveTo(col3, col1, true);
+                break;
+            case "moveToLeft":
+                moveTo(col3, col1);
+                break;
+            case "moveToRight":
+                moveTo(col1, col3);
+                break;
+            case "moveAllToRight":
+                moveTo(col1, col3, true);
+                break;
+            default:
+                console.error("Unknown action:", action);
+        }
+        console.log(`Clicked button for action: ${action}`);
+    }
+})
+
+
+// Change button states based on checkbox selection
+document.body.addEventListener("change", (event) => {
+    if (event.target.type === "checkbox")
+        updateButtonState();
+});
 updateButtonState();
-addCheckboxListeners();
-
-
-document.getElementById("moveAllToLeft").addEventListener("click", () => moveTo(col3, col1, true));
-document.getElementById("moveToLeft").addEventListener("click", () => moveTo(col3, col1));
-document.getElementById("moveToRight").addEventListener("click", () => moveTo(col1, col3));
-document.getElementById("moveAllToRight").addEventListener("click", () => moveTo(col1, col3, true));

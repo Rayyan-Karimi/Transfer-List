@@ -22,10 +22,10 @@
             </td>
             <td>
                 <div class="buttons">
-                    <button id="moveAllToLeft"><<</button>
-                    <button id="moveToLeft"><</button>
-                    <button id="moveToRight">></button>
-                    <button id="moveAllToRight">>></button>
+                    <button id="moveAllToLeft" data-button="moveAllToLeft" class="movement-button"> << </button>
+                    <button id="moveToLeft" data-button="moveToLeft" class="movement-button"><</button>
+                    <button id="moveToRight" data-button="moveToRight" class="movement-button">></button>
+                    <button id="moveAllToRight" data-button="moveAllToRight" class="movement-button">>></button>
                 </div>
             </td>
             <td class="column" id="col3">
@@ -35,7 +35,7 @@
                 <label><input type="checkbox" value="Svelte">Svelte</label>
             </td>
         </tr>
-    </table>    
+    </table>
     <script type="module" src="app.js"></script>
 </body>
 
